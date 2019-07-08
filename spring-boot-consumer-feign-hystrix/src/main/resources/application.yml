@@ -1,0 +1,32 @@
+server:
+  port: 8096
+  servlet:
+    context-path: /springbootconsumer
+
+spring:
+  application:
+    name: spring-boot-consumer-feign-hystrix
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8090/springcloudeureka/eureka/
+
+feign:
+  hystrix:
+    #Feign中已经默认集成了Hystrix，但是Spring Cloud在D版本之后没有默认打开。需要在配置文件中配置打开它
+    enabled: true
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000

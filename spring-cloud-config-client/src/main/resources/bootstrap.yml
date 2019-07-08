@@ -1,0 +1,12 @@
+spring:
+  application:
+    #配置Config Server获取的配置文件的{application}
+    name: spring-cloud-config-client
+  cloud:
+    config:
+      #配置Config Server的地址
+      uri: http://127.0.0.1:8092/springcloudconfig
+      #配置Config Server获取的配置文件的{profile}
+      profile: pro
+      #配置Config Server获取的配置文件的{label}
+      label: master

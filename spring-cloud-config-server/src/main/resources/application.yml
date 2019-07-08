@@ -1,0 +1,21 @@
+server:
+  port: 8092
+  servlet:
+    context-path: /springcloudconfig
+
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          #配置Git仓库的地址
+          uri: https://github.com/dkbnull/SpringCloudDemo
+          #配置文件的路径
+          search-paths: spring-cloud-config-repo
+          #访问Git仓库的用户名，公开仓库可不填写
+          username: ""
+          #访问Git仓库的密码，公开仓库可不填写
+          password: ""
+      label: master
